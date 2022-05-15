@@ -1,0 +1,3 @@
+/Users/nolongerlaugh/mur/study/2course/coursework/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nolongerlaugh/mur/study/2course/coursework/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nolongerlaugh/mur/study/2course/coursework/cpp/cmake-build-debug/CMakeFiles/cpp.dir
