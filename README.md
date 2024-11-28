@@ -1,25 +1,24 @@
 # Boson-Sampling
 
 
-Реализовано три алгоритма генерации выборки неразличимых бозонов в линейной сети
+Three algorithms for generating a sample of indistinguishable bosons in a linear network have been implemented
 
-##  Задача
-> В первые n мод линейной оптической сети из m мод подаются неразличимые фотоны. На выходе в каждой моде регистрируется количество бозонов. Оптическую сеть можно характеризовать матрицей ![equations](https://latex.codecogs.com/svg.image?U^{m\times&space;m})
-> ![Alt-текст](https://github.com/nolongerlaugh/Boson-Sampling/raw/master/image.png)
-> Состояние описывается вектором:
-> ![equations](https://latex.codecogs.com/svg.image?S=|i_1i_2&space;\dots&space;i_m&space;\rangle), где ![equations](https://latex.codecogs.com/svg.image?i_k) - количество бозонов в ![equations](https://latex.codecogs.com/svg.image?k)-ой моде.
-> Вероятность состояния ![equations](https://latex.codecogs.com/svg.image?S) можно записать как:
-> 
+##  Problem
+> Indistinguishable photons are fed into the first n modes of the linear optical network from m modes. At the output, the number of bosons is recorded in each mode. An optical network can be characterized by a matrix ![equations](https://latex.codecogs.com/svg.image?U^{m\times&space;m})
+> ![Alt text](https://github.com/nolongerlaugh/Boson-Sampling/raw/master/image.png )
+> The state is described by a vector:
+> ![equations](https://latex.codecogs.com/svg.image?S=|i_1i_2&space;\dots&space;i_m&space;\rangle), where ![equations](https://latex.codecogs.com/svg.image?i_k ) - the number of bosons in ![equations](https://latex.codecogs.com/svg.image?k) in fashion.
+> Probability of condition ![equations](https://latex.codecogs.com/svg.image?S) can be written as:
+>
 > ![equations](https://latex.codecogs.com/svg.image?P_S(S&space;=&space;|i_1i_2\dots&space;i_n|)=\frac{Per(U_S)}{i1!i2!\dots&space;i_n!}),
 > 
-> где ![equations](https://latex.codecogs.com/svg.image?U_S) - матрица nxn, путем взятия ![equations](https://latex.codecogs.com/svg.image?i_k) копий ![equations](https://latex.codecogs.com/svg.image?k)-ой строки матрицы U.
+> where ![equations](https://latex.codecogs.com/svg.image?U_S) is the nxn matrix, by taking ![equations](https://latex.codecogs.com/svg.image?i_k ) copies ![equations](https://latex.codecogs.com/svg.image?k)-th row of the matrix U.
+## Methods
++ Calculating the full distribution and sampling from it as from a discrete distribution.
++ Distribution generation using Markov chain Monte Carlo.
++ Tensor-train decomposition of the distribution tensor and generation using conditional probability
 
-## Методы
-+ Вычисление полного распределения и сэмплирование из него как из дискретного распределения.
-+ Генерация распределения с помощью Марковской цепи Монте-Карло.
-+ Tensor-train разложение тензора распределения и генерация с помощью условной вероятности
-
-## Основные функции
+## Simple use
 ```python
     from Sampler_all import *
     smp = Sampler(m, n) #создание объекта класса сэмплера с m модами и n бозонами. Создается случайная унитарная матрица U(mxm)
